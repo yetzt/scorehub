@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "scorehub",
+  "version": "0.0.1",
+  "description": "use a nintendo controller to run a scorebord",
+  "main": "scorehub.js",
+  "author": "yetzt <node@yetzt.me>",
+  "license": "Unlicense",
+  "dependencies": {
+    "debug": "^2.3.3",
+    "gamepad": "^1.3.0",
+    "queue": "^4.0.0",
+    "request": "^2.79.0",
+    "xml2js": "^0.4.17"
+  }
+}
