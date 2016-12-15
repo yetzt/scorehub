@@ -2,6 +2,7 @@
 
 var scoreboard = require("./lib/scoreboard.js");
 var controller = require("./lib/controller.js");
+var counterclock = require("./lib/counterclock.js");
 
 function scorehub(config){
 	if (!(this instanceof scorehub)) return new scorehub(config);
@@ -9,8 +10,65 @@ function scorehub(config){
 	
 	self.scoreboard = new scoreboard();
 	self.controller = new controller();
+	self.counterclock = new counterclock();
 	
 	self.scoreboard.connect(function(){
+
+		// counterclock
+		
+		self.counterclock.on("jam-start", function(){
+			self.scoreboard.startJam();
+		});
+		
+		self.counterclock.on("jam-end", function(){
+			self.scoreboard.stopJam();
+		});
+		
+		self.counterclock.on("game-start", function(){
+			self.scoreboard.resumeGame();
+		});
+		
+		self.counterclock.on("resume", function(){
+			self.scoreboard.resumeGame();
+		});
+		
+		self.counterclock.on("official-timeout", function(){
+			self.scoreboard.timeout();
+		});
+		
+		self.counterclock.on("clock", function(value){
+			self.scoreboard.setPeriodClock(value);
+		});
+		
+		self.counterclock.on("team-timeout", function(team){
+			self.scoreboard.teamTimeout(team);
+		});
+		
+		self.counterclock.on("official-review", function(team){
+			self.scoreboard.review(team);
+		});
+		
+		self.counterclock.on("retained-review", function(team){
+			self.scoreboard.retainedReview(team);
+		});
+		
+		self.counterclock.on("lost-review", function(team){
+			self.scoreboard.lostReview(team);
+		});
+		
+		self.counterclock.on("period-end", function(){
+			debug("period end control not implemented yet");
+		});
+		
+		self.counterclock.on("end-of-game", function(){
+			debug("end of game control not implemented yet");
+		});
+		
+		self.counterclock.on("overtime-jam", function(){
+			debug("overtime jam control not implemented yet");
+		});
+		
+		// controller
 
 		self.controller.on("b", function(){
 			self.scoreboard.startJam();
