@@ -10,7 +10,7 @@ Thanks to [node-gamepad](https://www.npmjs.com/package/gamepad) many cheap usb-g
 
 ### Counterclock
 
-Support for [CounterClock](https://github.com/yetzt/counterclock), an Arduino/ESP8266-based Jam Timing device, will happen.
+[CounterClock](https://github.com/yetzt/counterclock), an Arduino/ESP8266-based Jam Timing device, is supported.
 
 ## Setup
 
