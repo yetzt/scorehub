@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "scorehub",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "remote controller bridge for crg scoreboard",
   "main": "scorehub.js",
   "author": "yetzt <node@yetzt.me>",
