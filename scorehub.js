@@ -31,6 +31,10 @@ function scorehub(config){
 		self.counterclock.on("resume", function(){
 			self.scoreboard.resumeGame();
 		});
+
+		self.counterclock.on("resume-period-clock", function(){
+			self.scoreboard.resumePeriodClock();
+		});
 		
 		self.counterclock.on("official-timeout", function(){
 			self.scoreboard.timeout();
