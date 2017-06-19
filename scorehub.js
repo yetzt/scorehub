@@ -3,6 +3,7 @@
 var scoreboard = require("./lib/scoreboard.js");
 var controller = require("./lib/controller.js");
 var counterclock = require("./lib/counterclock.js");
+var debug = require("debug")("scorehub");
 
 function scorehub(config){
 	if (!(this instanceof scorehub)) return new scorehub(config);
